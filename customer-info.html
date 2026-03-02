@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Information - Empowered Women Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffe6f0, #fff5e6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 400px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff3366;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ff3366;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #cc0052;
+        }
+
+        .success {
+            margin-top: 10px;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Customer Details</h2>
+
+    <form id="customerForm">
+        <label>Full Name</label>
+        <input type="text" id="name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone" required>
+
+        <label>Address</label>
+        <input type="text" id="address" required>
+
+        <label>City</label>
+        <input type="text" id="city" required>
+
+        <label>Payment Method</label>
+        <select id="payment">
+            <option>Cash on Delivery</option>
+            <option>UPI</option>
+            <option>Card Payment</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="success" id="message"></div>
+</div>
+
+<script>
+document.getElementById("customerForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    document.getElementById("message").innerHTML = 
+    "✅ Information Submitted Successfully!";
+
+    document.getElementById("customerForm").reset();
+});
+</script>
+
+</body>
+</html>
